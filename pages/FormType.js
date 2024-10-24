@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Button } from '@mantine/core'; // Or you can use a plain button
 import Header from './Header'; // Adjust the path according to your file structure
+import Footer from './Footer';
 
 export default function CombinedFormWithReactDatePicker() {
   const [formData, setFormData] = useState({
@@ -95,8 +96,8 @@ export default function CombinedFormWithReactDatePicker() {
           <DatePicker
             selected={formData.dateOfBirth}
             onChange={handleDateChange}
-            dateFormat="MM/dd/yyyy"
-            placeholderText="MM/DD/YYYY"
+            dateFormat="dd/MM/yyyy"
+            placeholderText="DD/MM/YYYY"
             className="w-full mt-2 p-2 border border-gray-300 rounded-lg text-black"
             showYearDropdown
             showMonthDropdown
@@ -209,7 +210,7 @@ export default function CombinedFormWithReactDatePicker() {
         {/* Exam Confirmation Question */}
         <div>
           <label className="block text-lg font-medium text-black">
-            Xác nhận đăng ký lịch thi 17/10 - KDT <span className="text-red-500">*</span>
+            Xác nhận đăng ký lịch thi 17/10 <span className="text-red-500">*</span>
           </label>
           <div className="space-y-2 mt-2">
             <div className="flex items-center">
@@ -246,8 +247,9 @@ export default function CombinedFormWithReactDatePicker() {
             className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-700"
           >
             Clear Form
-          </Button>
+          </Button>         
         </div>
+        <Footer></Footer>
       </form>
     </div>
   );
